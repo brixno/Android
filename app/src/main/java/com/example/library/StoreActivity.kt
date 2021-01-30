@@ -8,7 +8,7 @@ import com.example.sqlite.SqliteHelper
 import kotlinx.android.synthetic.main.activity_store.*
 
 class StoreActivity : AppCompatActivity() {
-    val helper = SqliteHelper(this, "memo", 1)
+    val helper = SqliteHelper(this, "library.db", 1)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

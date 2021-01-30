@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_show_list.*
 import kotlinx.android.synthetic.main.activity_store.*
 
 class showListActivity : AppCompatActivity() {
-    val helper = SqliteHelper(this, "library",1)
+    val helper = SqliteHelper(this, "library.db",1)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
