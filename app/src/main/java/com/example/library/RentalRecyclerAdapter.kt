@@ -5,12 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sqlite.Library
+import com.example.sqlite.RentalLibrary
 import com.example.sqlite.SqliteHelper
 import kotlinx.android.synthetic.main.item_recycler.view.*
 
-class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.Holder>(){
+class RentalRecyclerAdapter : RecyclerView.Adapter<RentalRecyclerAdapter.Holder>(){
     var helper: SqliteHelper? = null
-    var listData = mutableListOf<Library>()
+    var listData = mutableListOf<RentalLibrary>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recycler, parent, false)
@@ -22,18 +23,18 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.Holder>(){
     }
 
     override fun onBindViewHolder(holder:Holder, position:Int) {
-        val library = listData.get(position)
-        holder.setLibrary(library)
+        val rentalLibrary = listData.get(position)
+        holder.setLibrary(rentalLibrary)
     }
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun setLibrary(library:Library) {
-            itemView.textNo.text = "${library.no}"
-            itemView.textBookName.text = library.bookName
-            itemView.textWriter.text = library.writer
-            itemView.textPrice.text = library.price.toString()
-            itemView.textGenre.text = library.genre
+        fun setLibrary(rental:RentalLibrary) {
+            itemView.textNo.text = "${rental.no}"
+            itemView.textBookName.text = rental.bookName
+            itemView.textWriter.text = rental.writer
+            itemView.textPrice.text = rental.price.toString()
+            itemView.textGenre.text = rental.genre
         }
     }
 }

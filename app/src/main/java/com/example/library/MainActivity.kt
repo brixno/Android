@@ -3,7 +3,6 @@ package com.example.library
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.sqlite.SqliteHelper
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,12 +17,14 @@ class MainActivity : AppCompatActivity() {
         val modifyIntent = Intent(this, ModifyActiviy::class.java)
         val listIntent = Intent(this, showListActivity::class.java)
         val rentalListIntent = Intent(this, rentalListActivity::class.java)
+        val removeIntent = Intent(this, RemoveActivity::class.java)
 
-        btn_rental.setOnClickListener { startActivity(rentalIntent) }
-        btn_turnIn.setOnClickListener { startActivity(turnInIntent) }
-        btn_store.setOnClickListener { startActivity(storeIntent) }
-        btn_modify.setOnClickListener { startActivity(modifyIntent) }
-        btn_showList.setOnClickListener { startActivity(listIntent) }
-        btn_rentalList.setOnClickListener { startActivity(rentalListIntent) }
+        btn_goRental.setOnClickListener { startActivity(rentalIntent) }
+        btn_goTurnIn.setOnClickListener { startActivity(turnInIntent) }
+        btn_goStore.setOnClickListener { startActivity(storeIntent) }
+        btn_goModify.setOnClickListener { startActivity(modifyIntent) }
+        btn_goShowList.setOnClickListener { startActivity(listIntent) }
+        btn_goRentalList.setOnClickListener { startActivity(rentalListIntent) }
+        btn_goRemove.setOnClickListener { startActivity(removeIntent) }
     }
 }

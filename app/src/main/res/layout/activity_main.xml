@@ -7,11 +7,11 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btn_rental"
+        android:id="@+id/btn_goRental"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="도서 대여"
-        app:layout_constraintBottom_toTopOf="@+id/btn_store"
+        app:layout_constraintBottom_toTopOf="@+id/btn_goStore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintHorizontal_weight="2"
@@ -21,11 +21,11 @@
         app:layout_constraintVertical_weight="2" />
 
     <Button
-        android:id="@+id/btn_turnIn"
+        android:id="@+id/btn_goTurnIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="도서 반납"
-        app:layout_constraintBottom_toTopOf="@+id/btn_modify"
+        app:layout_constraintBottom_toTopOf="@+id/btn_goModify"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,31 +33,31 @@
         app:layout_constraintVertical_bias="0.212" />
 
     <Button
-        android:id="@+id/btn_store"
+        android:id="@+id/btn_goStore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="도서 저장"
-        app:layout_constraintBottom_toTopOf="@+id/btn_showList"
+        app:layout_constraintBottom_toTopOf="@+id/btn_goShowList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_rental"
+        app:layout_constraintTop_toBottomOf="@+id/btn_goRental"
         app:layout_constraintVertical_bias="0.106" />
 
     <Button
-        android:id="@+id/btn_modify"
+        android:id="@+id/btn_goModify"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="도서 수정"
-        app:layout_constraintBottom_toTopOf="@+id/btn_rentalList"
+        app:layout_constraintBottom_toTopOf="@+id/btn_goRentalList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_turnIn"
+        app:layout_constraintTop_toBottomOf="@+id/btn_goTurnIn"
         app:layout_constraintVertical_bias="0.297" />
 
     <Button
-        android:id="@+id/btn_showList"
+        android:id="@+id/btn_goShowList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotationX="0"
@@ -66,11 +66,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_store"
+        app:layout_constraintTop_toBottomOf="@+id/btn_goStore"
         app:layout_constraintVertical_bias="0.25" />
 
     <Button
-        android:id="@+id/btn_rentalList"
+        android:id="@+id/btn_goRentalList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="대여 목록"
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_modify"
+        app:layout_constraintTop_toBottomOf="@+id/btn_goModify"
         app:layout_constraintVertical_bias="0.495" />
 
     <TextView
@@ -92,4 +92,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.11" />
+
+    <Button
+        android:id="@+id/btn_goRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="도서 삭제"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        app:layout_constraintVertical_bias="0.912" />
 </androidx.constraintlayout.widget.ConstraintLayout>

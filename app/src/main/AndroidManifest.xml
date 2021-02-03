@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Library">
-        <activity android:name=".rentalListActivity"></activity>
+        <activity android:name=".RemoveActivity"></activity>
+        <activity android:name=".rentalListActivity" />
         <activity android:name=".showListActivity" />
         <activity android:name=".ModifyActiviy" />
         <activity android:name=".TurnInActivity" />
