@@ -10,7 +10,6 @@ import com.example.sqlite.SqliteHelper
 import kotlinx.android.synthetic.main.item_recycler.view.*
 
 class RentalRecyclerAdapter : RecyclerView.Adapter<RentalRecyclerAdapter.Holder>(){
-    var helper: SqliteHelper? = null
     var listData = mutableListOf<RentalLibrary>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {

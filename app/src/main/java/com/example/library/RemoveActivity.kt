@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.sqlite.Library
 import com.example.sqlite.SqliteHelper
+import com.example.sqlite.SqliteRentalHelper
 import kotlinx.android.synthetic.main.activity_remove.*
 import kotlinx.android.synthetic.main.activity_store.*
 

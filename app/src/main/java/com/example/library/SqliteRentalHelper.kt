@@ -5,9 +5,9 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class SqliteHelper(context: Context, name:String, version:Int) : SQLiteOpenHelper(context, name, null, version) {
+class SqliteRentalHelper(context: Context, name:String, version:Int) : SQLiteOpenHelper(context, name, null, version) {
     override fun onCreate(db: SQLiteDatabase?) {
-        val create = "create table library (" +
+        val create = "create table rentalLibrary (" +
                 "no integer primary key, " +
                 "bookName text, " +
                 "price integer, " +
@@ -21,22 +21,22 @@ class SqliteHelper(context: Context, name:String, version:Int) : SQLiteOpenHelpe
 
     }
 
-    fun insertLibrary(library: Library) {
+    fun insertRentalLibrary(rentalLibrary: RentalLibrary) {
         val values = ContentValues()
-        values.put("bookName", library.bookName)
-        values.put("price", library.price)
-        values.put("writer", library.writer)
-        values.put("genre", library.genre)
+        values.put("bookName", rentalLibrary.bookName)
+        values.put("price", rentalLibrary.price)
+        values.put("writer", rentalLibrary.writer)
+        values.put("genre", rentalLibrary.genre)
 
         val wd = writableDatabase
-        wd.insert("library", null, values) // 첫번쨰 오류일 수도?
+        wd.insert("rentalLibrary", null, values) // 첫번쨰 오류일 수도?
 
         wd.close()
     }
 
-    fun selectLibrary():MutableList<Library> {
-        val list = mutableListOf<Library>()
-        val select = "select * from library"
+    fun selectRentalLibrary():MutableList<RentalLibrary> {
+        val list = mutableListOf<RentalLibrary>()
+        val select = "select * from rentalLibrary"
         val rd = readableDatabase
         val cursor = rd.rawQuery(select,null)
         while(cursor.moveToNext())
@@ -47,7 +47,7 @@ class SqliteHelper(context: Context, name:String, version:Int) : SQLiteOpenHelpe
             val writer = cursor.getString(cursor.getColumnIndex("writer"))
             val genre = cursor.getString(cursor.getColumnIndex("genre"))
 
-            list.add(Library(no, bookName, price, writer, genre))
+            list.add(RentalLibrary(no, bookName, price, writer, genre))
         }
 
         cursor.close()
@@ -56,8 +56,8 @@ class SqliteHelper(context: Context, name:String, version:Int) : SQLiteOpenHelpe
         return list
     }
 
-    fun deleteLibrary(library:Library) {
-        val delete = "delete from library where bookName = '${library.bookName}'"
+    fun deleteLibrary(RentalLibrary:RentalLibrary) {
+        val delete = "delete from RentalLibrary where bookName = '${RentalLibrary.bookName}'"
 
         val db = writableDatabase
         db.execSQL(delete)
@@ -65,13 +65,13 @@ class SqliteHelper(context: Context, name:String, version:Int) : SQLiteOpenHelpe
     }
 
     fun deleteAllLibrary() {
-        val delete = "delete from library"
+        val delete = "delete from RentalLibrary"
         val db = writableDatabase
         db.execSQL(delete)
         db.close()
     }
 
-    fun updateLibrary(library:Library, libraryNext:Library) {
+    fun updateLibrary(rentalLibrary:RentalLibrary, libraryNext:RentalLibrary) {
         val values = ContentValues()
         values.put("bookName", libraryNext.bookName)
         values.put("price", libraryNext.price)
@@ -79,10 +79,10 @@ class SqliteHelper(context: Context, name:String, version:Int) : SQLiteOpenHelpe
         values.put("genre", libraryNext.genre)
 
         val wd = writableDatabase
-        wd.update("library", values, "bookName = '${library.bookName}'", null)
+        wd.update("rentalLibrary", values, "bookName = '${rentalLibrary.bookName}'", null)
         wd.close()
     }
 
 }
 
-data class Library(var no:Long?, var bookName:String, var price:Long, var writer:String, var genre:String)
+data class RentalLibrary(var no:Long?, var bookName:String, var price:Long, var writer:String, var genre:String)
